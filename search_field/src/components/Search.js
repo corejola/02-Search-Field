@@ -18,7 +18,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `${process.env.PORT}/findAll`
+        const url = `/findAll`
         console.log(url)
         axios.get(url).then(res => {
             console.log(res.data)
@@ -35,7 +35,7 @@ class Search extends Component {
     // dynamic query
     handleInputChange = event => {
         const query = event.target.value
-        console.log(query)
+
         if (!query) {
             this.setState({
                 query,
@@ -57,7 +57,7 @@ class Search extends Component {
     // get search results
     getSearchResults = (query) => {
 
-        const searchUrl = `${process.env.PORT}/search=${query}`
+        const searchUrl = `/search=${query}`
         if (this.cancel) {
             this.cancel.cancel()
         }
