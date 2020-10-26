@@ -29,6 +29,7 @@ class Search extends Component {
         const url = '/findAll'
         axios.get(url).then(res => {
             console.log(res)
+            res.setHeader('Content-Type', 'application/json')
             this.setState({
                 results: res.data
             })
