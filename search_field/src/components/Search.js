@@ -17,7 +17,7 @@ class Search extends Component {
         super(props)
         this.state = {
             query: "",
-            results: {},
+            results: [],
             loading: false,
             mesage: ''
         }
@@ -28,15 +28,14 @@ class Search extends Component {
     componentDidMount() {
         const url = '/findAll'
         axios.get(url).then(res => {
+
             this.setState({
                 results: res.data
             })
         }).catch(err => {
             console.log(err)
         })
-
         console.log(this.state.results[0])
-
     }
 
 
@@ -47,7 +46,7 @@ class Search extends Component {
         if (!query) {
             this.setState({
                 query,
-                results: {},
+                results: [],
                 message: ''
             })
         } else {
