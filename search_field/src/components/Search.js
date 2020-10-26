@@ -18,7 +18,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `http://localhost:8000/findAll`
+        const url = `/findAll`
         axios.get(url).then(res => {
             console.log(res.data)
             this.setState({
@@ -57,7 +57,8 @@ class Search extends Component {
     getSearchResults = (query) => {
 
         console.log(query)
-        const searchUrl = `http://localhost:8000/search=${query}`
+
+        const searchUrl = `/search=${query}`
 
         if (this.cancel) {
             this.cancel.cancel()
