@@ -3,15 +3,15 @@ const Animal_names = require('./server/models/data.js')
 const app = express();
 const cors = require('cors')
 const path = require('path');
-const bodyParser = require('body-parser');
+
 // connect to the database
 require('./server/config/db')
 
 // allow CORS
 app.use(cors())
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 // For Deployment
