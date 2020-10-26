@@ -98,7 +98,7 @@ class Search extends Component {
         if (Object.keys(results).length && results.length) {
             return (
                 <div className="results-container">
-                    {results.map(result => {
+                    {results && results.map(result => {
                         return (
                             <div key={result._id} className="result-item">
                                 <h6 className="animal-name">{result.common_name} , {result.scientific_name}</h6>
