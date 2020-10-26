@@ -34,6 +34,8 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 8000;
 
 // Simple Routes
+
+app.use('/', res.setHeader('Content-Type', 'application/json'))
 // find all to display to the FE
 app.get("/findAll", async (req, res) => {
     let animals = await Animal_names.find()
@@ -45,7 +47,7 @@ app.get("/findAll", async (req, res) => {
     })
     // res.send(data)
     // PROBLEM IS COMING FROM THE RESPONSE.....
-    res.setHeader('Content-Type', 'application/json');
+
     res.json(data)
 })
 
@@ -70,7 +72,7 @@ app.get('/search=:query', async (req, res) => {
                     }]
                 }
             }])
-            res.setHeader('Content-Type', 'application/json');
+
             res.json(animalQuery)
             // res.send(animalQuery)
         }
