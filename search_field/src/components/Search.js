@@ -28,7 +28,7 @@ class Search extends Component {
     componentDidMount() {
         const url = '/findAll'
         axios.get(url).then(res => {
-
+            console.log(res)
             this.setState({
                 results: res.data
             })
