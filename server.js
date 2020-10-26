@@ -9,7 +9,7 @@ require('./server/config/db')
 
 // allow CORS
 app.use(cors())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 // For Deployment
 app.use(function (req, res, next) {
