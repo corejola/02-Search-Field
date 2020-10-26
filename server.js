@@ -35,7 +35,9 @@ const PORT = process.env.PORT || 8000;
 
 // Simple Routes
 
-app.use('/', (req, res, next) => { res.setHeader('Content-Type', 'application/json') })
+app.get('/', async (req, res) => {
+    res.send('/')
+})
 // find all to display to the FE
 app.get("/findAll", async (req, res) => {
     let animals = await Animal_names.find()
