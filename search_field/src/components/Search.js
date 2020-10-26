@@ -26,7 +26,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `${serverAPI}/findAll`
+        const url = `${process.env.PORT}/findAll`
         console.log(url)
         axios.get(url).then(res => {
             this.setState({
