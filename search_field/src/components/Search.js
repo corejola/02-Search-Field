@@ -18,7 +18,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `${process.env.PORT}/findAll`
+        const url = `https://search-field-02.herokuapp.com/findAll`
         console.log(url)
         axios.get(url).then(res => {
             console.log(res.data)
@@ -57,7 +57,7 @@ class Search extends Component {
     // get search results
     getSearchResults = (query) => {
 
-        const searchUrl = `${process.env.PORT}/search=${query}`
+        const searchUrl = `https://search-field-02.herokuapp.com/search=${query}`
         if (this.cancel) {
             this.cancel.cancel()
         }
