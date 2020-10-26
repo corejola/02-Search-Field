@@ -46,7 +46,7 @@ class Search extends Component {
         if (!query) {
             this.setState({
                 query,
-                // results: {},
+                results: {},
                 message: ''
             })
         } else {
