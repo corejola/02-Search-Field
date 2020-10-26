@@ -6,7 +6,7 @@
   "homepage": "https://search-field-02.herokuapp.com/",
   "scripts": {
     "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd search-field && npm run start\"",
+    "dev": "concurrently \"nodemon server.js\" \"cd search_field && npm run start\"",
     "react": "cd search-field && npm run start"
   },
   "author": "Cedric",

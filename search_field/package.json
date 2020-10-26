@@ -12,6 +12,7 @@
     "react-scripts": "4.0.0",
     "web-vitals-reporter": "0.2.0"
   },
+  "proxy": "http://localhost:8000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

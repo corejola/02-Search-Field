@@ -18,7 +18,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `${process.env.PORT}/findAll`
+        const url = `http://localhost:8000/findAll`
         axios.get(url).then(res => {
             console.log(res.data)
             this.setState({
@@ -57,7 +57,7 @@ class Search extends Component {
     getSearchResults = (query) => {
 
         console.log(query)
-        const searchUrl = `${process.env.PORT}/search=${query}`
+        const searchUrl = `http://localhost:8000/search=${query}`
 
         if (this.cancel) {
             this.cancel.cancel()
@@ -94,7 +94,7 @@ class Search extends Component {
                 <div className="results-container">
                     {results.map(result => {
                         return (
-                            <div key={result.id} className="result-item">
+                            <div key={result._id} className="result-item">
                                 <h6 className="animal-name">{result.common_name} , {result.scientific_name}</h6>
                             </div>
                         )
