@@ -1,5 +1,15 @@
 ## 02 - Search Field
 
+Application is running on [https://search-field-02.herokuapp.com/](https://search-field-02.herokuapp.com/)
+
+To run locally: run the following commands:
+    
+    `npm install`
+    `npm run search-install`
+    `npm run dev`
+
+To set up MongoDB locally, update the mongoURI variable located in './server/config/db.js' to local mongo uri.
+
 ### Search Field Scope
 1. Simple webpage to Display data from (~1Mil rows of data)
     - data loads on React componentDidMount
