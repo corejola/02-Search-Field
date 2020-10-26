@@ -41,6 +41,7 @@ app.get("/findAll", async (req, res) => {
         data.push(animal)
     })
     // res.send(data)
+    // PROBLEM IS COMING FROM THE RESPONSE.....
     res.json(data)
 })
 

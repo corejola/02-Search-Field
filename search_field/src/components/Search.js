@@ -27,9 +27,12 @@ class Search extends Component {
     // populate page with all data rows...
     componentDidMount() {
         const url = '/findAll'
-        axios.get(url).then(res => {
+        axios.get(url, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
             console.log(res)
-            res.setHeader('Content-Type', 'application/json')
             this.setState({
                 results: res.data
             })
@@ -65,14 +68,18 @@ class Search extends Component {
     // get search results
     getSearchResults = (query) => {
 
-        const searchUrl = '/search=${query}'
+        const searchUrl = `/search=${query}`;
         if (this.cancel) {
             this.cancel.cancel()
         }
         this.cancel = axios.CancelToken.source()
 
         axios.get(searchUrl, {
-            cancelToken: this.cancel.token
+            cancelToken: this.cancel.token,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
         })
             .then(res => {
                 const resultNotFoundMsg = !res.data.length
