@@ -9,10 +9,12 @@ require('./server/config/db')
 // allow CORS
 app.use(cors())
 
+app.use(express.static(__dirname))
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }))
 
 // simple server
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 // Simple Routes
 // find all to display to the FE
@@ -56,6 +58,13 @@ app.get('/search=:query', async (req, res) => {
         }
     }
 })
+
+app.get('*', (req, res) => {
+    const rootHtmlPath = path.resolve(__dirname, '..', '/search-field/build', 'index.html');
+    res.sendFile(rootHtmlPath);
+
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
