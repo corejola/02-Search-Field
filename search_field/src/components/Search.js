@@ -3,14 +3,6 @@ import './Search.css';
 import axios from 'axios';
 import Loader from './gif/loader.gif';
 
-// URL Server variable
-// let serverURL = "";
-// if (process.env.NODE_ENV === "production") {
-//     serverURL = process.env.PORT;
-// } else {
-//     serverURL = "http://localhost:8000";
-// }
-
 // using class component
 class Search extends Component {
     constructor(props) {
@@ -32,7 +24,6 @@ class Search extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
-            console.log(res)
             this.setState({
                 results: res.data
             })
@@ -102,7 +93,7 @@ class Search extends Component {
 
     renderSearchResults = () => {
         const { results } = this.state;
-        console.log(results)
+
         if (Object.keys(results).length && results.length) {
             return (
                 <div className="results-container">

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "02 Search Field Project",
   "main": "server.js",
-  "homepage": "https://search-field-02.herokuapp.com/",
+  "homepage": ".",
   "scripts": {
     "search-install": "cd search_field && npm install",
     "start": "node server.js",
