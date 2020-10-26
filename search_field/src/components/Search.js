@@ -3,7 +3,7 @@ import './Search.css';
 import axios from 'axios';
 import Loader from './gif/loader.gif';
 
-
+// API Server variable
 let serverAPI = "";
 if (process.env.NODE_ENV === "production") {
     serverAPI = process.env.PORT;
