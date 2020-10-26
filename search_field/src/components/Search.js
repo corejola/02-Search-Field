@@ -29,7 +29,6 @@ class Search extends Component {
         const url = `${serverAPI}/findAll`
 
         axios.get(url).then(res => {
-
             this.setState({
                 results: res.data
             })
