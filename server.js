@@ -11,9 +11,9 @@ require('./server/config/db')
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, './search-field/build')))
+app.use(express.static(path.join(__dirname, './search-field/public')))
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './search-field/build/index.html'));
+    res.sendFile(path.resolve(__dirname, './search-field/public/index.html'));
 });
 
 
