@@ -2,6 +2,7 @@ const express = require('express');
 const Animal_names = require('./server/models/data.js')
 const app = express();
 const cors = require('cors')
+const path = require('path');
 
 // connect to the database
 require('./server/config/db')
