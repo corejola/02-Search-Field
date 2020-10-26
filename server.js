@@ -24,9 +24,8 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname, "search_field", "build")))
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "search_field", "build", "index.html"));
-});
+
+
 // ----Deployment----
 
 
@@ -34,7 +33,6 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 8000;
 
 // Simple Routes
-
 app.get('/', async (req, res) => {
     res.send('/')
 })
@@ -83,6 +81,10 @@ app.get('/search=:query', async (req, res) => {
         }
     }
 })
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, "search_field", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
