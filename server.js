@@ -11,7 +11,7 @@ require('./server/config/db')
 app.use(cors())
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // For Deployment
@@ -43,9 +43,9 @@ app.get("/findAll", async (req, res) => {
     animals.forEach(animal => {
         data.push(animal)
     })
-    // res.send(data)
+    res.send(data)
     // PROBLEM IS COMING FROM THE RESPONSE.....
-    res.json(data)
+    // res.json(data)
 })
 
 // find by parameter/query - dynamic partial search of mongodb collection
@@ -69,8 +69,8 @@ app.get('/search=:query', async (req, res) => {
                     }]
                 }
             }])
-            res.json(animalQuery)
-            // res.send(animalQuery)
+            // res.json(animalQuery)
+            res.send(animalQuery)
         }
         catch (err) {
             console.log(err)
