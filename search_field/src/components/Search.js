@@ -4,12 +4,12 @@ import axios from 'axios';
 import Loader from './gif/loader.gif';
 
 // API Server variable
-let serverAPI = "";
-if (process.env.NODE_ENV === "production") {
-    serverAPI = process.env.PORT;
-} else {
-    serverAPI = "http://localhost:8000";
-}
+// let serverAPI = "";
+// if (process.env.NODE_ENV === "production") {
+//     serverAPI = process.env.PORT;
+// } else {
+//     serverAPI = "http://localhost:8000";
+// }
 
 // using class component
 class Search extends Component {
@@ -26,7 +26,7 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `${process.env.PORT}/findAll`
+        const url = '/findAll'
         console.log(url)
         axios.get(url).then(res => {
             this.setState({
@@ -64,7 +64,7 @@ class Search extends Component {
     // get search results
     getSearchResults = (query) => {
 
-        const searchUrl = `${serverAPI}/search=${query}`
+        const searchUrl = '/search=${query}'
         if (this.cancel) {
             this.cancel.cancel()
         }
