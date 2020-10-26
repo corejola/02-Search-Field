@@ -11,6 +11,7 @@ require('./server/config/db')
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
+// For Deployment
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
