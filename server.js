@@ -9,7 +9,7 @@ require('./server/config/db')
 // allow CORS
 app.use(cors())
 
-app.use(express.static(__dirname, 'build'))
+app.use(express.static(__dirname, 'public'))
 
 app.use(express.urlencoded({ extended: false }))
 
@@ -60,7 +60,7 @@ app.get('/search=:query', async (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    const rootHtmlPath = path.resolve(__dirname, '..', '/build', 'index.html');
+    const rootHtmlPath = path.resolve(__dirname, '..', '/public', 'index.html');
     res.sendFile(rootHtmlPath);
 
 });
