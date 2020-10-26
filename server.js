@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
 
 app.use(express.static(path.join(__dirname, "search_field", 'build')))
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "search_field", 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, "search_field", 'build', 'index.html'));
 });
 
 
