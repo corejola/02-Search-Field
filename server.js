@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 // });
 
 app.use(express.static(path.join(__dirname, "search_field", "public")))
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, "search_field", "public", "index.html"));
 });
 // ----Deployment----
