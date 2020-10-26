@@ -1,0 +1,21 @@
+{
+  "name": "02-search-filter",
+  "version": "1.0.0",
+  "description": "02 Search Field Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd search-field && npm run start\"",
+    "react": "cd search-field && npm run start"
+  },
+  "author": "Cedric",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.10"
+  }
+}
