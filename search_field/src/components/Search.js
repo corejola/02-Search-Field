@@ -35,7 +35,7 @@ class Search extends Component {
         }).catch(err => {
             console.log(err)
         })
-        console.log(this.state.results[0])
+
     }
 
 
@@ -94,7 +94,7 @@ class Search extends Component {
 
     renderSearchResults = () => {
         const { results } = this.state;
-
+        console.log(results)
         if (Object.keys(results).length && results.length) {
             return (
                 <div className="results-container">
