@@ -3,6 +3,14 @@ import './Search.css';
 import axios from 'axios';
 import Loader from './gif/loader.gif';
 
+
+let serverAPI = "";
+if (process.env.NODE_ENV === "production") {
+    serverAPI = process.env.PORT;
+} else {
+    serverAPI = "http://localhost:8000";
+}
+
 // using class component
 class Search extends Component {
     constructor(props) {
@@ -18,10 +26,10 @@ class Search extends Component {
 
     // populate page with all data rows...
     componentDidMount() {
-        const url = `https://search-field-02.herokuapp.com/findAll`
-        console.log(url)
+        const url = `${serverAPI}/findAll`
+
         axios.get(url).then(res => {
-            console.log(res.data)
+
             this.setState({
                 results: res.data
             })
@@ -57,7 +65,7 @@ class Search extends Component {
     // get search results
     getSearchResults = (query) => {
 
-        const searchUrl = `https://search-field-02.herokuapp.com/search=${query}`
+        const searchUrl = `${serverAPI}/search=${query}`
         if (this.cancel) {
             this.cancel.cancel()
         }
