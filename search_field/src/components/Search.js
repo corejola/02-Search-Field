@@ -26,9 +26,7 @@ class Search extends Component {
         }).catch(err => {
             console.log(err)
         })
-
     }
-
 
     // dynamic query
     handleInputChange = event => {
@@ -102,7 +100,6 @@ class Search extends Component {
     }
 
     render() {
-
         const { query, loading, message } = this.state
 
         return (

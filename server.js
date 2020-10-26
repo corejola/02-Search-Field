@@ -13,7 +13,6 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 // For Deployment
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -24,10 +23,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname, "search_field", "build")))
-
-
-// ----Deployment----
-
 
 // simple server
 const PORT = process.env.PORT || 8000;
@@ -45,8 +40,6 @@ app.get("/findAll", async (req, res) => {
     animals.forEach(animal => {
         data.push(animal)
     })
-    // res.send(data)
-    // PROBLEM IS COMING FROM THE RESPONSE.....
 
     res.json(data)
 })
