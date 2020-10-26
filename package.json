@@ -4,7 +4,7 @@
   "description": "02 Search Field Project",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js && cd search-field && npm run start",
+    "start": "node server.js",
     "dev": "concurrently \"nodemon server.js\" \"cd search-field && npm run start\"",
     "react": "cd search-field && npm run start"
   },
