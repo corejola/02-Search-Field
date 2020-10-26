@@ -11,6 +11,14 @@ require('./server/config/db')
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
+
 app.use(express.static(path.join(__dirname, './search-field/public')))
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './search-field/public/index.html'));
