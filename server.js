@@ -8,13 +8,11 @@ require('./server/config/db')
 
 // allow CORS
 app.use(cors())
-
-app.use(express.static(__dirname, './search-field/build'))
 app.use(express.urlencoded({ extended: false }))
-app.get('*', (req, res) => {
-    const rootHtmlPath = path.resolve(__dirname, './search-field/build/index.html');
-    res.sendFile(rootHtmlPath);
 
+app.use(express.static(path.join(__dirname, './search-field/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './search-field/build/index.html'));
 });
 
 
