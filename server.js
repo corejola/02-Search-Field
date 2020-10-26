@@ -9,9 +9,14 @@ require('./server/config/db')
 // allow CORS
 app.use(cors())
 
-app.use(express.static(__dirname, 'public'))
-
+app.use(express.static(__dirname, './search-field/build'))
 app.use(express.urlencoded({ extended: false }))
+app.get('*', (req, res) => {
+    const rootHtmlPath = path.resolve(__dirname, './search-field/build/index.html');
+    res.sendFile(rootHtmlPath);
+
+});
+
 
 // simple server
 const PORT = process.env.PORT || 8000;
@@ -58,13 +63,6 @@ app.get('/search=:query', async (req, res) => {
         }
     }
 })
-
-app.get('*', (req, res) => {
-    const rootHtmlPath = path.resolve(__dirname, '..', '/public', 'index.html');
-    res.sendFile(rootHtmlPath);
-
-});
-
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
