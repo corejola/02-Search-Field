@@ -43,9 +43,10 @@ app.get("/findAll", async (req, res) => {
     animals.forEach(animal => {
         data.push(animal)
     })
-    res.send(data)
+    // res.send(data)
     // PROBLEM IS COMING FROM THE RESPONSE.....
-    // res.json(data)
+    res.setHeader('Content-Type', 'application/json');
+    res.json(data)
 })
 
 // find by parameter/query - dynamic partial search of mongodb collection
@@ -69,8 +70,9 @@ app.get('/search=:query', async (req, res) => {
                     }]
                 }
             }])
-            // res.json(animalQuery)
-            res.send(animalQuery)
+            res.setHeader('Content-Type', 'application/json');
+            res.json(animalQuery)
+            // res.send(animalQuery)
         }
         catch (err) {
             console.log(err)

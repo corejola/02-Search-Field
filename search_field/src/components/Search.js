@@ -19,11 +19,7 @@ class Search extends Component {
     // populate page with all data rows...
     componentDidMount() {
         const url = '/findAll'
-        axios.get(url, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => {
+        axios.get(url).then(res => {
             this.setState({
                 results: res.data
             })
@@ -66,11 +62,7 @@ class Search extends Component {
         this.cancel = axios.CancelToken.source()
 
         axios.get(searchUrl, {
-            cancelToken: this.cancel.token,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-
+            cancelToken: this.cancel.token
         })
             .then(res => {
                 const resultNotFoundMsg = !res.data.length
