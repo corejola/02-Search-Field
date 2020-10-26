@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "02 Search Field Project",
   "main": "server.js",
-  "homepage": "https://search-field-02.herokuapp.com/",
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"nodemon server.js\" \"cd search_field && npm run start\"",
