@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const mongodbUri = process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.cyea3.mongodb.net/search-field?retryWrites=true&w=majority`
+const mongodbUri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.cyea3.mongodb.net/search-field?retryWrites=true&w=majority`
+// const mongodbUri = process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.cyea3.mongodb.net/search-field?retryWrites=true&w=majority`
 
 mongoose.connect(mongodbUri,
     {
